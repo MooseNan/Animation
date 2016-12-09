@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EE77643E1DF5781400A2AE4C /* LoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = EE77643D1DF5781400A2AE4C /* LoadingView.m */; };
 		EEDABCB11DF166D100D1F00D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EEDABCB01DF166D100D1F00D /* main.m */; };
 		EEDABCB41DF166D100D1F00D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EEDABCB31DF166D100D1F00D /* AppDelegate.m */; };
 		EEDABCB71DF166D100D1F00D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EEDABCB61DF166D100D1F00D /* ViewController.m */; };
@@ -35,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EE77643C1DF5781400A2AE4C /* LoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadingView.h; sourceTree = "<group>"; };
+		EE77643D1DF5781400A2AE4C /* LoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadingView.m; sourceTree = "<group>"; };
 		EEDABCAC1DF166D100D1F00D /* Animation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Animation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEDABCB01DF166D100D1F00D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		EEDABCB21DF166D100D1F00D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -110,6 +113,8 @@
 				EEDABCBD1DF166D100D1F00D /* LaunchScreen.storyboard */,
 				EEDABCC01DF166D100D1F00D /* Info.plist */,
 				EEDABCAF1DF166D100D1F00D /* Supporting Files */,
+				EE77643C1DF5781400A2AE4C /* LoadingView.h */,
+				EE77643D1DF5781400A2AE4C /* LoadingView.m */,
 			);
 			path = Animation;
 			sourceTree = "<group>";
@@ -274,6 +279,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EEDABCB71DF166D100D1F00D /* ViewController.m in Sources */,
+				EE77643E1DF5781400A2AE4C /* LoadingView.m in Sources */,
 				EEDABCB41DF166D100D1F00D /* AppDelegate.m in Sources */,
 				EEDABCB11DF166D100D1F00D /* main.m in Sources */,
 			);
@@ -507,6 +513,7 @@
 				EEDABCDB1DF166D100D1F00D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EEDABCDC1DF166D100D1F00D /* Build configuration list for PBXNativeTarget "AnimationTests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +522,7 @@
 				EEDABCDE1DF166D100D1F00D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EEDABCDF1DF166D100D1F00D /* Build configuration list for PBXNativeTarget "AnimationUITests" */ = {
 			isa = XCConfigurationList;
@@ -523,6 +531,7 @@
 				EEDABCE11DF166D100D1F00D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
