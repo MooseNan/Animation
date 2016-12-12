@@ -79,11 +79,7 @@
     
     CAKeyframeAnimation *animation2 = [self createRotateAnimation:false];
     [bigCircleLayer addAnimation:animation forKey:nil];
-    
- //   [self performSelector:@selector(swingAnimation) withObject:self afterDelay:1.0];
-   // [self swingAnimation];
-    
-  //  [smallCircleLayer addAnimation:animation2 forKey:@"rotation"];
+
 }
 float bounceEaseOut(float t)
 {
@@ -91,52 +87,61 @@ float bounceEaseOut(float t)
         return (121 * t * t)/16.0;
     } else if (t < 8/11.0) {
         return (363/40.0 * t * t) - (99/10.0 * t) + 17/5.0;
-    } else if (t < 9/10.0) {
+    } else if (t < 9/11.0) {
         return (4356/361.0 * t * t) - (35442/1805.0 * t) + 16061/1805.0;
     }
     return (54/5.0 * t * t) - (513/25.0 * t) + 268/25.0;
 }
+
 float interpolate(float from, float to, float time)
 {
-    return (to - from) * time + from;
+    
+    return (to - from) * time+ from;
 }
 - (NSNumber *)interpolateFromValue:(float)fromValue toValue:(float)toValue time:(float)time
 {
-  //  if ([fromValue isKindOfClass:[NSNumber class]]) {
-        //get type
-        //const char *type = [(NSValue *)fromValue objCType];
-       // if (strcmp(type, @encode(CGPoint)) == 0) {
+    float result = interpolate(fromValue, toValue, time);
     
-            float result = interpolate(fromValue, toValue, time);
-    
-            NSNumber *num = [NSNumber numberWithFloat:result];
-            return num;
-      //  }
-   // }
-    //provide safe default implementation
-  //  return (time < 0.5)? fromValue: toValue;
+    NSNumber *num = [NSNumber numberWithFloat:result];
+    return num;
 }
 -(CAKeyframeAnimation *)createRotateAnimation:(BOOL)isReverse{
    
     float fromValue = 0;
     float toValue = -M_PI_4;
    
-    CFTimeInterval duration = 1.0;
+    CFTimeInterval duration = 8.0;
     //generate keyframes
     NSInteger numFrames = duration * 60;
     NSMutableArray *frames = [NSMutableArray array];
     for (int i = 0; i < numFrames; i++) {
+        
         float time = 1/(float)numFrames * i;
         //apply easing
+        if (time <4/11.0) {
+            toValue = -M_PI_4*6/5.0;
+        }
+        else if(time <8/11.0){
+            toValue = -M_PI_4*4/5.0;
+        }
+        else if (time<9/11.0)
+        {
+            toValue = -M_PI_4*5.8/5.0;
+        }
+        else{
+            toValue=-M_PI_4;
+        }
+        
         time = bounceEaseOut(time);
-        //add keyframe
+        
+        
         [frames addObject:[self interpolateFromValue:fromValue toValue:toValue time:time]];
     }
     
     CAKeyframeAnimation* animation3;
     animation3 = [CAKeyframeAnimation animationWithKeyPath:@"transform.rotation.z"];
   //  animation3.timingFunction = [CAMediaTimingFunction functionWithControlPoints:1 :0.8 :0.5 :1];
-    animation3.duration = 2;
+    animation3.duration = 8;
     animation3.repeatCount = 1;
     animation3.removedOnCompletion = NO;
     animation3.fillMode = kCAFillModeForwards;
@@ -165,6 +170,7 @@ float interpolate(float from, float to, float time)
     group.delegate = self;
     return animation3;*/
    // return  animation;
+    return  animation3;
 }
 
 -(void)swingAnimation{
